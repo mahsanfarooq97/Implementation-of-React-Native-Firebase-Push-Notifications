@@ -47,9 +47,9 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 NSDictionary *appProperties = [RNFBMessagingModule addCustomPropsToUserProps:nil withLaunchOptions:launchOptions];
   NSDictionary *initProps = [self prepareInitialProps];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                             moduleName:@"nameOfYourApp"
+                                             moduleName:@"UiChallenge"
                                              initialProperties:appProperties];
-  UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"UiChallenge", initProps);
+  // UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"UiChallenge", initProps);
 
   if (@available(iOS 13.0, *)) {
     rootView.backgroundColor = [UIColor systemBackgroundColor];

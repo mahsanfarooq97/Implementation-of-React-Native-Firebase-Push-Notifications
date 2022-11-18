@@ -46,6 +46,7 @@ const App = () => {
     await notifee.displayNotification({
       title: 'Notification Title',
       body: 'Main body content of the notification',
+      ios: { sound: 'default' },
       android: {
         channelId: 'default',
         smallIcon: 'ic_launcher_round',
