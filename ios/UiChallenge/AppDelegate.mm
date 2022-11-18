@@ -1,9 +1,10 @@
+
+#import "RNFBMessagingModule.h"
 #import "AppDelegate.h"
 #import <Firebase.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import "RNFBMessagingModule.h"
 
 #import <React/RCTAppSetupUtils.h>
 
@@ -32,11 +33,15 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     [FIRApp configure];
   RCTAppSetupPrepareApp(application);
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-
+NSDictionary *appProperties = [RNFBMessagingModule addCustomPropsToUserProps:nil withLaunchOptions:launchOptions];
+RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                             moduleName:@"UiChallenge"
+                                             initialProperties:appProperties];
 #if RCT_NEW_ARCH_ENABLED
   _contextContainer = std::make_shared<facebook::react::ContextContainer const>();
   _reactNativeConfig = std::make_shared<facebook::react::EmptyReactNativeConfig const>();
@@ -44,11 +49,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   _bridgeAdapter = [[RCTSurfacePresenterBridgeAdapter alloc] initWithBridge:bridge contextContainer:_contextContainer];
   bridge.surfacePresenter = _bridgeAdapter.surfacePresenter;
 #endif
-NSDictionary *appProperties = [RNFBMessagingModule addCustomPropsToUserProps:nil withLaunchOptions:launchOptions];
-  NSDictionary *initProps = [self prepareInitialProps];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                             moduleName:@"UiChallenge"
-                                             initialProperties:appProperties];
+
+  // NSDictionary *initProps = [self prepareInitialProps];
   // UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"UiChallenge", initProps);
 
   if (@available(iOS 13.0, *)) {
