@@ -3,6 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "RNFBMessagingModule.h"
 
 #import <React/RCTAppSetupUtils.h>
 
@@ -43,8 +44,11 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   _bridgeAdapter = [[RCTSurfacePresenterBridgeAdapter alloc] initWithBridge:bridge contextContainer:_contextContainer];
   bridge.surfacePresenter = _bridgeAdapter.surfacePresenter;
 #endif
-
+NSDictionary *appProperties = [RNFBMessagingModule addCustomPropsToUserProps:nil withLaunchOptions:launchOptions];
   NSDictionary *initProps = [self prepareInitialProps];
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                             moduleName:@"nameOfYourApp"
+                                             initialProperties:appProperties];
   UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"UiChallenge", initProps);
 
   if (@available(iOS 13.0, *)) {

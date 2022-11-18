@@ -14,7 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-UiChallenge-UiChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-UiChallenge-UiChallengeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A2A8EABB2924ED4C00885398 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2A8EABA2924ED4B00885398 /* GoogleService-Info.plist */; };
+		A20DAE11292790D500FC8DE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A20DAE10292790D500FC8DE7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-UiChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UiChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UiChallenge/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-UiChallenge-UiChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UiChallenge-UiChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-UiChallenge-UiChallengeTests/Pods-UiChallenge-UiChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		A20DAE10292790D500FC8DE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2931081292614F300184A5A /* UiChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = UiChallenge.entitlements; path = UiChallenge/UiChallenge.entitlements; sourceTree = "<group>"; };
-		A2A8EABA2924ED4B00885398 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				A2A8EABA2924ED4B00885398 /* GoogleService-Info.plist */,
+				A20DAE10292790D500FC8DE7 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* UiChallenge */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* UiChallengeTests */,
@@ -250,7 +250,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				A2A8EABB2924ED4C00885398 /* GoogleService-Info.plist in Resources */,
+				A20DAE11292790D500FC8DE7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +519,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.UiChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uichallenge.test;
 				PRODUCT_NAME = UiChallenge;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -546,7 +546,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.UiChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uichallenge.test;
 				PRODUCT_NAME = UiChallenge;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

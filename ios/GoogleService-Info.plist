@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1086559255383-l1a6b51gqn0ngggr4gidggersfnrg9ak.apps.googleusercontent.com</string>
+	<string>1086559255383-5q2p2hg6ktk9u0g6720d5e1ij0b025pi.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1086559255383-l1a6b51gqn0ngggr4gidggersfnrg9ak</string>
+	<string>com.googleusercontent.apps.1086559255383-5q2p2hg6ktk9u0g6720d5e1ij0b025pi</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1086559255383-psm1hee3706jlk62t2kvsg7vgs2o8st3.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBaXkEzBkLPFiA0FfyX0hKz6jDXMKyStP8</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.UiChallenge</string>
+	<string>com.uichallenge.test</string>
 	<key>PROJECT_ID</key>
 	<string>uichallengetesting</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1086559255383:ios:2f930c25965b2a78481c12</string>
+	<string>1:1086559255383:ios:cbe7cae40fbbaf24481c12</string>
 </dict>
 </plist>

@@ -33,7 +33,7 @@ import notifee, { AndroidImportance, AndroidStyle, EventType } from '@notifee/re
 
 
 const App = () => {
-  async function onDisplayNotification() {
+  async function onDisplayNotification(remoteMessage) {
     if (Platform.OS === 'ios') {
       await notifee.requestPermission()
     }
@@ -70,23 +70,41 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
   useEffect(() => {
-    getFcmToken()
+    checkPermission()
   }, [])
+  const checkPermission = async () => {
+    messaging()
+      .requestPermission({
+        sound: true,
+        badge: true,
+      })
+      .then((authStatus) => {
+        enabled =
+          authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+          authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+        if (enabled) {
+          getFcmToken()
+        }
+        else {
+          checkPermission()
+        }
+      });
+  }
   const getFcmToken = async () => {
-    await messaging().registerDeviceForRemoteMessages();
     const token = await messaging().getToken();
     console.log('FCM Token here', token)
-    const unsubscribe = messaging().onMessage(async remoteMessage => {
-      console.log('hi')
-      onDisplayNotification()
-    });
-    return unsubscribe;
+    if (token) {
+      const unsubscribe = messaging().onMessage(async remoteMessage => {
+        console.log('hi')
+        onDisplayNotification(remoteMessage)
+      });
+      return unsubscribe;
+    }
+
   }
   useEffect(() => {
     // Assume a message-notification contains a "type" property in the data payload of the screen to open
-
     messaging().onNotificationOpenedApp(remoteMessage => {
       console.log(
         'Notification caused app to open from background state:',
@@ -94,7 +112,6 @@ const App = () => {
       );
       // navigation.navigate(remoteMessage.data.type);
     });
-
     // Check whether an initial notification is available
     messaging()
       .getInitialNotification()
@@ -108,7 +125,7 @@ const App = () => {
         }
       });
   }, []);
-  // when user Performs any action on ForgroundNotification
+
   useEffect(() => {
     const unsubscribe = notifee.onForegroundEvent(({ type, detail }) => {
       switch (type) {
