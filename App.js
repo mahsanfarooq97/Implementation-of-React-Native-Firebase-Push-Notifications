@@ -46,8 +46,9 @@ const App = () => {
     await notifee.displayNotification({
       title: 'Notification Title',
       body: 'Main body content of the notification',
-      ios: { sound: 'default' },
+      ios: { sound: 'bell.mp3' },
       android: {
+        sound: 'bell',
         channelId: 'default',
         smallIcon: 'ic_launcher_round',
         largeIcon: 'https://cdn.pixabay.com/photo/2016/02/28/12/55/boy-1226964_1280.jpg',
